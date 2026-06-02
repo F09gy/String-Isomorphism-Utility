@@ -3,6 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="StringIsomorphism/StringIsomorphism.vcxproj" />
-  <Project Path="Tests/Tests.vcxproj" />
+  <Project Path="StringIsomorphism/StringIsomorphism.vcxproj" Id="2e2aac7f-b4f3-4130-b2d2-cd4fb0dc2e47" />
+  <Project Path="Tests/Tests.vcxproj" Id="9bbc23fe-6d5a-4998-b0f6-1067bbcac43a" />
 </Solution>

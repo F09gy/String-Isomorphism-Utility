@@ -1,20 +1,46 @@
-﻿// StringIsomorphism.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+#include <fstream>
 
-#include <iostream>
-
-int main()
+enum class ErrorCode
 {
-    std::cout << "Hello World!\n";
+    SUCCESS,
+    ERR_ARGS_COUNT, 
+    ERR_INPUT_FILE_NOT_FOUND, 
+    ERR_OUTPUT_FILE_CREATE, 
+    ERR_INVALID_CHARS, 
+    ERR_LINE_LENGTH, 
+    ERR_READ
+};
+
+// Функция чтения входного файла
+bool readInputFile(std::string path, std::vector<std::string>& lines)
+{
+
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
+// Функция проверки изоморфности
+bool solveIsomorphism(std::string str1, std::string str2, std::map<char, char>& mapping)
+{
 
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
+}
+
+// Функция создания файла и записи результата
+bool writeOutputFile(std::string path, bool isIsomorphic, const std::map<char, char>& mapping)
+{
+
+}
+
+int main(int argc, char* argv[])
+{
+    if (argc != 3)
+    {
+        std::cerr << "Ошибка ввода: аргументов меньше или больше, чем 2." << std::endl;
+        return static_cast<int>(ErrorCode::ERR_ARGS_COUNT);
+    }
+
+    std::string inputPath = argv[1];
+    std::string outputName = argv[2];
+}
