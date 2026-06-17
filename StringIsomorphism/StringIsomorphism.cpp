@@ -86,5 +86,28 @@ bool solveIsomorphism(std::string str1, std::string str2, std::map<char, char>& 
  */
 bool writeOutputFile(std::string path, bool isIsomorphic, const std::map<char, char>& mapping)
 {
+    std::ofstream file(path);
 
+    if (!file.is_open())
+    {
+        return false;
+    }
+
+    if (isIsomorphic)
+    {
+        file << "Изоморфны\n";
+
+        for (const auto& pair : mapping)
+        {
+            file << '(' << pair.first << ' ' << pair.second << ")\n";
+        }
+    }
+    else
+    {
+        file << "Не изоморфны\n";
+    }
+
+    file.close();
+
+    return true;
 }
