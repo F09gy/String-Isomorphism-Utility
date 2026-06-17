@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "StringIsomorphism.h"
 #include <string>
 #include <map>
 #include <gtest/gtest.h>
@@ -254,11 +254,11 @@ TEST(TestsForSolveIsomorphism, AllCharTypesMixedReverseConflict) {
 // Тест 41. Длинная строка с корректной сложной биекцией
 TEST(TestsForSolveIsomorphism, LongStringValidBijection) {
     std::map<char, char> mapping;
-    EXPECT_TRUE(solveIsomorphism("abcdefghijabcdefghijabc", "qrstuvwxyzuvwxyzqrstuvwxyza"));
+    EXPECT_TRUE(solveIsomorphism("abcdefghijabcdefghijabc", "qrstuvwxyzqrstuvwxyzqrs", mapping));
 }
 
 // Тест 42. Длинная строка с прямым конфликтом в конце
 TEST(TestsForSolveIsomorphism, LongStringDirectConflict) {
     std::map<char, char> mapping;
-    EXPECT_FALSE(solveIsomorphism("abcdefghijklmnopqrstuvwxyza", "abcdefghijklmnopqrstuvwxyzx"));
+    EXPECT_FALSE(solveIsomorphism("abcdefghijklmnopqrstuvwxyza", "abcdefghijklmnopqrstuvwxyzx", mapping));
 }

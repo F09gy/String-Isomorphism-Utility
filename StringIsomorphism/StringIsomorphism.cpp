@@ -38,7 +38,43 @@ bool readInputFile(std::string path, std::vector<std::string>& lines)
 */
 bool solveIsomorphism(std::string str1, std::string str2, std::map<char, char>& mapping)
 {
+    if (str1.length() != str2.length())
+    {
+        return false;
+    }
 
+    for (size_t i = 0; i < str1.length(); ++i)
+    {
+        char c1 = str1[i];
+        char c2 = str2[i];
+
+        auto it = mapping.find(c1);
+
+        if (it != mapping.end())
+        {
+            if (it->second != c2)
+            {
+                return false;
+            }
+        }
+        else
+        {
+            auto valueIt = std::find_if(mapping.begin(), mapping.end(),
+                [c2](const std::pair<char, char>& p)
+                {
+                    return p.second == c2;
+                });
+
+            if (valueIt != mapping.end())
+            {
+                return false;
+            }
+
+            mapping[c1] = c2;
+        }
+    }
+
+    return true;
 }
 
 /**
