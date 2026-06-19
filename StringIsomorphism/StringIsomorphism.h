@@ -14,6 +14,6 @@ enum class ErrorCode
     ERR_READ
 };
 
-bool solveIsomorphism(const std::string& str1, const std::string& str2, std::map<char, char>& mapping);
-bool readInputFile(const std::string& path, std::vector<std::string>& lines);
-bool writeOutputFile(const std::string& path, bool isIsomorphic, const std::map<char, char>& mapping);
+bool solveIsomorphism(std::string str1, std::string str2, std::map<char, char>& mapping);
+bool readInputFile(std::string path, std::vector<std::string>& lines);
+bool writeOutputFile(std::string path, bool isIsomorphic, const std::map<char, char>& mapping);
